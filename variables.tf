@@ -44,16 +44,10 @@ variable "valtix_svpc_region" {
 variable "valtix_svpc_cidr" {
 	type	= string
 }
-variable "valtix_policy_ruleset_egress_name" {
+variable "valtix_policy_ruleset_eastwest_name" {
 	type	= string
 }
-variable "valtix_policy_ruleset_ingress_name" {
-	type	= string
-}
-variable "valtix_gateway_egress_name" {
-	type	= string
-}
-variable "valtix_gateway_ingress_name" {
+variable "valtix_gateway_eastwest_name" {
 	type	= string
 }
 variable "valtix_gateway_region" {
@@ -66,23 +60,5 @@ variable "valtix_gateway_autoscale_min" {
 	type	= string
 }
 variable "valtix_gateway_autoscale_max" {
-	type	= string
-}
-variable "valtix_certificate_name" {
-	type	= string
-}
-variable "valtix_decryption_name" {
-	type	= string
-}
-variable "valtix_dlp_name" {
-	type	= string
-}
-variable "valtix_fqdn_name" {
-	type	= string
-}
-variable "valtix_ips_name" {
-	type	= string
-}
-variable "valtix_mips_name" {
 	type	= string
 }
