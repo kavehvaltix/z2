@@ -5,22 +5,13 @@ variable "valtix_aws_region" {
 variable "valtix_aws_azs" {
 	type	= list (string)
 }
-variable "valtix_aws_account" {
-	type	= string
-}
 variable "valtix_csp_name" {
 	type	= string
 }
 variable "valtix_csp_regions" {
 	type	= list (string)
 }
-variable "valtix_aws_controller_role_arn" {
-	type	= string
-}
 variable "valtix_aws_firewall_role_arn" {
-	type	= string
-}
-variable "valtix_aws_external_id" {
 	type	= string
 }
 variable "valtix_aws_keypair_name" {
