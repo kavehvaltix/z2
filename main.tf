@@ -19,5 +19,11 @@ provider "valtix" {
 }
 
 provider "aws" {
-	region			= var.valtix_aws_region
+	region					= var.valtix_aws_region
+}
+provider "aws" {
+  	alias					= "aws-workspaces"
+  	region                  = "us-west-2"
+  	shared_credentials_file = "/Users/tf_user/.aws/creds"
+  	profile                 = "customprofile"
 }

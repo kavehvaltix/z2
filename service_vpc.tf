@@ -1,5 +1,3 @@
-# Transit Gateway
-
 # Services VPC
 resource "valtix_service_vpc" "valtix_svpc" {
   name               = var.valtix_svpc_name
