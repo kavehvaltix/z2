@@ -2,7 +2,7 @@
 resource "valtix_gateway" "valtix_gateway_eastwest" {
 	name                    = var.valtix_gateway_eastwest_name
 	description             = ""
-	csp_account_name        = valtix_cloud_account.aws.name
+	csp_account_name        = var.valtix_csp_name
 	instance_type           = "AWS_M5_2XLARGE"
 	gateway_image           = var.valtix_gateway_version
 	mode                    = "HUB"
