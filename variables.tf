@@ -23,9 +23,6 @@ variable "valtix_account_name" {
 variable "valtix_api_key_file" {
 	type	= string
 }
-variable "valtix_tgw_name" {
-	type	= string
-}
 variable "valtix_svpc_name" {
 	type	= string
 }

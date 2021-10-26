@@ -9,7 +9,6 @@ valtix_api_key_file				    = "Valtix-Zuora-Terr.json"
 valtix_csp_name					    = "aws-843948977550"
 valtix_csp_regions                  = ["us-west-2"]
 valtix_svpc_cidr				    = "172.23.0.0/21"
-valtix_tgw_name					    = "valtix_tgw"
 valtix_svpc_name				    = "valtix_svpc"
 valtix_svpc_region				    = "us-west-2"
 valtix_policy_ruleset_eastwest_name = "valtix_policy_ruleset_eastwest"
