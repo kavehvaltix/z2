@@ -1,6 +1,6 @@
 # Valtix Variables
 valtix_aws_region				    = "us-west-2"
-valtix_aws_azs					    = ["us-west-1a","us-west-2b"]
+valtix_aws_azs					    = ["us-west-2a","us-west-2b"]
 valtix_aws_firewall_role_arn	    = "arn:aws:iam::843948977550:role/valtix-firewall-role"
 valtix_aws_external_id			    = "vpxfzukbldikmxqbtehlpvvxwtmoaqxkczjwcpmwgtdbmnlrhhvoebuvbheeyvkr"
 valtix_aws_keypair_name			    = "valtix"
