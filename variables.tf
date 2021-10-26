@@ -23,6 +23,10 @@ variable "valtix_account_name" {
 variable "valtix_api_key_file" {
 	type	= string
 }
+
+variable "aws_principle_spoke_vpc" {
+	type	= string
+}
 variable "valtix_svpc_name" {
 	type	= string
 }
@@ -48,5 +52,11 @@ variable "valtix_gateway_autoscale_min" {
 	type	= string
 }
 variable "valtix_gateway_autoscale_max" {
+	type	= string
+}
+variable "aws_workspaces_account_vpc_id" {
+	type	= string
+}
+variable "valtix_workspaces_csp_name" {
 	type	= string
 }
