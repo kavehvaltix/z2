@@ -16,4 +16,3 @@ valtix_gateway_region               = "us-west-2"
 valtix_gateway_autoscale_min        = 1
 valtix_gateway_autoscale_max        = 1
 valtix_gateway_version			    = "2.9-03"
-
