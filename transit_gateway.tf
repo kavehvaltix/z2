@@ -29,7 +29,7 @@ resource "aws_ram_resource_association" "tgw_sharing" {
   resource_share_arn = aws_ram_resource_share.shared_valtix_tgw.arn
 }
 
-resource "valtix_spoke_vpc" "valtix_spoke" {
+resource "valtix_spoke_vpc" "valtix_workspaces_spoke" {
   service_vpc_id             = valtix_service_vpc.valtix_svpc.id
   spoke_vpc_id               = var.aws_workspaces_account_vpc_id
   spoke_vpc_csp_account_name = var.spoke_vpc_csp_account_name

@@ -60,3 +60,13 @@ variable "aws_workspaces_account_vpc_id" {
 variable "valtix_workspaces_csp_name" {
 	type	= string
 }
+
+variable "valtix_ws_aws_controller_role_arn"{
+	type = string
+}
+variable "valtix_ws_aws_account"{
+	type = string
+}
+variable "valtix_ws_aws_external_id" {
+	type = string
+}
