@@ -3,7 +3,7 @@ terraform {
 	required_providers {
 		valtix		= {
 			source	= "valtix-security/valtix"
-			version = "2.9.1"
+			version = "2.10.1"
 		}
 		aws = {
 			source  = "hashicorp/aws"
