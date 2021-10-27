@@ -23,4 +23,4 @@ valtix_workspaces_csp_name          = "1111111111"
 valtix_ws_aws_external_id           = "1111111111"
 valtix_ws_aws_controller_role_arn   = "1111111111"
 valtix_ws_aws_account               = "1111111111" 
-spoke_route_table_ids                     = [""]
+spoke_route_table_ids               = [""]
