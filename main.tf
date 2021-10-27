@@ -21,6 +21,8 @@ provider "valtix" {
 provider "aws" {
 	region					= var.valtix_aws_region
 }
+
+# need this to update workspace VPC route table to go to TGW
 provider "aws" {
   	alias					= "aws-workspaces"
   	region                  = "us-west-2"
