@@ -61,3 +61,8 @@ variable "aws_workspaces_account_vpc_id" {
 variable "spoke_vpc_csp_account_name" {
 	type = string
 }
+
+variable "spoke_route_table_ids" {
+  description = "Route table Ids on which the default route is set to the TGW"
+  type = list(string)
+}
