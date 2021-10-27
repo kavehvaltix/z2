@@ -57,3 +57,7 @@ variable "valtix_gateway_autoscale_max" {
 variable "aws_workspaces_account_vpc_id" {
 	type	= string
 }
+
+variable "spoke_vpc_csp_account_name" {
+	type = string
+}
