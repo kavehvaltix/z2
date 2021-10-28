@@ -1,9 +1,9 @@
 # Transit Gateway
 resource "aws_ec2_transit_gateway" "valtix_tgw" {
-  description = "Valtix Transit Gateway US-West-2"
+  description = "${var.valtix_svpc_name}.${var.valtix_aws_region}"
   auto_accept_shared_attachments = "enable"
     tags = {
-    Name = "Valtix-TGW-US-West-2"
+    Name = "${var.valtix_svpc_name}.${var.valtix_aws_region}"
   }
 }
 resource "aws_ram_resource_share" "shared_valtix_tgw" {
@@ -11,7 +11,7 @@ resource "aws_ram_resource_share" "shared_valtix_tgw" {
   allow_external_principals = true
 
   tags = {
-    Name = "Valtix-TGW-US-West-2"
+    Name = "${var.valtix_svpc_name}.${var.valtix_aws_region}"
   }
     depends_on = [
     aws_ec2_transit_gateway.valtix_tgw
