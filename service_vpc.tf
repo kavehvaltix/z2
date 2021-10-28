@@ -13,7 +13,7 @@ resource "valtix_spoke_vpc" "valtix_workspaces_spoke" {
   service_vpc_id             = valtix_service_vpc.valtix_svpc.id
   spoke_vpc_id               = var.aws_workspaces_account_vpc_id
   spoke_vpc_csp_account_name = var.spoke_vpc_csp_account_name
-  spoke_vpc_region           = "us-west-2"
+  spoke_vpc_region           = var.valtix_aws_region
   depends_on = [
     aws_ram_resource_share.shared_valtix_tgw, aws_ram_resource_association.tgw_sharing,valtix_service_vpc.valtix_svpc
   ]
