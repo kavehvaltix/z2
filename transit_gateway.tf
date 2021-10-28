@@ -13,6 +13,9 @@ resource "aws_ram_resource_share" "shared_valtix_tgw" {
   tags = {
     Name = "Valtix-TGW-US-West-2"
   }
+    depends_on = [
+    aws_ec2_transit_gateway.valtix_tgw
+  ]
 }
 
 resource "aws_ram_principal_association" "aws_workspaces_account" {
