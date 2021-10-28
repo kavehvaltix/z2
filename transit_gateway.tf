@@ -30,5 +30,5 @@ resource "aws_ram_resource_association" "tgw_sharing" {
 
 resource "time_sleep" "wait_for_tgw_sharing" {
   depends_on      = [aws_ram_resource_association.tgw_sharing]
-  create_duration = "60s"
+  create_duration = "30s"
 }
