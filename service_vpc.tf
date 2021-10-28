@@ -25,5 +25,8 @@ resource "aws_route" "route" {
   count                  = length(var.spoke_route_table_ids)
   route_table_id         = var.spoke_route_table_ids[count.index]
   destination_cidr_block = "0.0.0.0/0"
-  transit_gateway_id     = var.transit_gateway_id
+  transit_gateway_id     = aws_ec2_transit_gateway.valtix_tgw.id
+  depends_on = [
+    time_sleep.wait_for_tgw_sharing
+  ]
 }

@@ -27,3 +27,8 @@ resource "aws_ram_resource_association" "tgw_sharing" {
   resource_arn       = aws_ec2_transit_gateway.valtix_tgw.arn
   resource_share_arn = aws_ram_resource_share.shared_valtix_tgw.arn
 }
+
+resource "time_sleep" "wait_for_tgw_sharing" {
+  depends_on      = [aws_ram_resource_association.tgw_sharing]
+  create_duration = "60s"
+}

@@ -26,6 +26,5 @@ provider "aws" {
 provider "aws" {
   	alias					= "aws-workspaces"
   	region                  = "us-west-2"
-  	shared_credentials_file = "/Users/tf_user/.aws/creds"
   	profile                 = "customprofile"
 }
