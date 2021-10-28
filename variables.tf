@@ -27,9 +27,6 @@ variable "aws_principle_spoke_vpc" {
 variable "valtix_svpc_name" {
 	type	= string
 }
-variable "valtix_svpc_region" {
-	type	= string
-}
 variable "valtix_svpc_cidr" {
 	type	= string
 }
@@ -37,9 +34,6 @@ variable "valtix_policy_ruleset_eastwest_name" {
 	type	= string
 }
 variable "valtix_gateway_eastwest_name" {
-	type	= string
-}
-variable "valtix_gateway_region" {
 	type	= string
 }
 variable "valtix_gateway_version" {
