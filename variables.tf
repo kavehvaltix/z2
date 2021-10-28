@@ -8,9 +8,6 @@ variable "valtix_aws_azs" {
 variable "valtix_csp_name" {
 	type	= string
 }
-variable "valtix_csp_regions" {
-	type	= list (string)
-}
 variable "valtix_aws_firewall_role_arn" {
 	type	= string
 }
