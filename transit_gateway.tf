@@ -11,7 +11,7 @@ resource "aws_ram_resource_share" "shared_valtix_tgw" {
   allow_external_principals = true
 
   tags = {
-    Environment = "Production"
+    Name = "Valtix-TGW-US-West-2"
   }
 }
 
