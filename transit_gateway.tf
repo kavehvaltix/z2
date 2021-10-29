@@ -28,6 +28,10 @@ resource "aws_ram_resource_association" "tgw_sharing" {
   resource_share_arn = aws_ram_resource_share.shared_valtix_tgw.arn
 }
 
+resource "aws_ram_resource_share_accepter" "receiver_accept" {
+  share_arn = aws_ram_principal_association.aws_workspaces_account.resource_share_arn
+}
+
 resource "time_sleep" "wait_for_tgw_sharing" {
   depends_on      = [aws_ram_resource_association.tgw_sharing]
   create_duration = "60s"
