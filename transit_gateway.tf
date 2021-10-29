@@ -1,6 +1,8 @@
 # Transit Gateway
 resource "aws_ec2_transit_gateway" "valtix_tgw" {
   description = "${var.valtix_svpc_name}.${var.valtix_aws_region}"
+  default_route_table_association = "disable"
+  default_route_table_propagation = "disable"
   auto_accept_shared_attachments = "enable"
     tags = {
     Name = "${var.valtix_svpc_name}.${var.valtix_aws_region}"
