@@ -8,6 +8,7 @@ resource "aws_ec2_transit_gateway" "valtix_tgw" {
     Name = "${var.valtix_svpc_name}.${var.valtix_aws_region}"
   }
 }
+
 resource "aws_ram_resource_share" "shared_valtix_tgw" {
   name                      = "Valtix Shared TGW"
   allow_external_principals = true
@@ -31,6 +32,7 @@ resource "aws_ram_resource_association" "tgw_sharing" {
 }
 
 resource "aws_ram_resource_share_accepter" "receiver_accept" {
+  provider =  aws.aws-workspaces
   share_arn = aws_ram_principal_association.aws_workspaces_account.resource_share_arn
 }
 
