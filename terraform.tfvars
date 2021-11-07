@@ -23,4 +23,16 @@ aws_principle_spoke_vpc             = "1111111111"
 aws_workspaces_account_vpc_id       = "1111111111"
 spoke_vpc_csp_account_name          = "1111111111" 
 spoke_route_table_ids               = [""]
-transit_vpc_cidr                    = ""
+
+#Transit VPC Configuration
+
+ec2_ssh_key_name                    = "my_ssh_key_name.pem"  
+ec2_instance_type                   = "t3a.medium"
+
+spoke_vpcs = {
+  transit_vpc = {
+    prefix = "transit_vpc_oregon"
+    vpc_cidr = "10.110.0.0/16"
+    subnet_bits = 8
+  }
+}

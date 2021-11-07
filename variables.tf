@@ -57,3 +57,22 @@ variable "spoke_route_table_ids" {
   description = "Route table Ids on which the default route is set to the TGW"
   type = list(string)
 }
+
+variable "ec2_ssh_key_name" {
+  description = "SSH Key pair name"
+  default     = "zuora_valtix"
+}
+
+variable "spoke_vpcs" {
+  description = "a list of spoke vpc variables"
+  type = map(object({
+    prefix      = string
+    vpc_cidr    = string
+    subnet_bits = number
+  }))
+}
+
+variable "ec2_instance_type" {
+  description = "App EC2 instance type"
+  default     = "t3a.medium"
+}

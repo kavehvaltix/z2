@@ -28,3 +28,13 @@ provider "aws" {
   	region                  = var.valtix_aws_region
   	profile                 = "customprofile"
 }
+
+module "transit_vpc" {
+  source        = "./transit_vpc"
+  prefix        = each.value.prefix
+  vpc_cidr      = each.value.vpc_cidr
+  subnet_bits   = each.value.subnet_bits
+  zones         = var.valtix_aws_azs
+  key_name      = var.ec2_ssh_key_name
+  instance_type = var.ec2_instance_type
+}
