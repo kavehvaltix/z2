@@ -13,6 +13,8 @@ valtix_gateway_eastwest_name		= "valtix_gateway_eastwest"
 valtix_gateway_autoscale_min        = 1
 valtix_gateway_autoscale_max        = 1
 valtix_gateway_version			    = "2.9-05"
+
+#Workspaces AWS account details
 aws_principle_spoke_vpc             = "1111111111"
 aws_workspaces_account_vpc_id       = "1111111111"
 spoke_vpc_csp_account_name          = "1111111111" 
