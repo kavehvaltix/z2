@@ -27,7 +27,7 @@ resource "aws_route" "workspaces_route" {
   destination_cidr_block = "0.0.0.0/0"
   transit_gateway_id     = aws_ec2_transit_gateway.valtix_tgw.id
   depends_on = [
-    time_sleep.wait_for_tgw_sharing, aws_ec2_transit_gateway.shared_valtix_tgw.transit_gateway_id
+    time_sleep.wait_for_tgw_sharing, aws_ram_resource_share_accepter.receiver_accept
   ]
 }
 
