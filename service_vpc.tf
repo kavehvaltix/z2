@@ -31,6 +31,7 @@ resource "aws_route" "workspaces_route" {
   ]
 }
 
+/**
 #Adding Transit VPC to Valtix
 resource "valtix_spoke_vpc" "valtix_tansit_vpc_spoke" {
   service_vpc_id             = valtix_service_vpc.valtix_svpc.id
@@ -41,7 +42,8 @@ resource "valtix_spoke_vpc" "valtix_tansit_vpc_spoke" {
     aws_ram_resource_share.shared_valtix_tgw, aws_ram_resource_association.tgw_sharing,valtix_service_vpc.valtix_svpc
   ]
 }
-
+**/
+/**
 #updating Transit VPC route table 
 resource "aws_route" "transit_vpc_route" {
   route_table_id         = aws_vpc.vpc.default_route_table_id
@@ -51,3 +53,4 @@ resource "aws_route" "transit_vpc_route" {
     time_sleep.wait_for_tgw_sharing
   ]
 }
+**/

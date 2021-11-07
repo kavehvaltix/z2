@@ -1,11 +1,11 @@
 variable "prefix" {
   description = "prefix for all resources created in this VPC"
-  default     = "kiran-spoke1"
+  default     = "km"
 }
 
-variable "vpc_cidr" {
+variable "transit_vpc_cidr" {
   description = "CIDR block of the VPC"
-  default     = "10.0.0.0/16"
+  default     = "10.110.0.0/16"
 }
 
 variable "subnet_bits" {
@@ -16,12 +16,12 @@ variable "subnet_bits" {
 variable "zones" {
   description = "availability zones that will be used"
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
+  default     = ["us-west-2a", "us-west-2b"]
 }
 
 variable "key_name" {
   description = "SSH Keypair name"
-  default     = "valtix_vvdn_ssh_april12_2018"
+  default     = "kaveh_71121"
 }
 
 variable "instance_type" {

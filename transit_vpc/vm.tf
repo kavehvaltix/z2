@@ -20,7 +20,7 @@ data "aws_ami" "valtix_ubuntu" {
 
 resource "aws_instance" "vm_priv" {
   count                       = length(var.zones)
-  ami                         = data.aws_ami.valtix_ubuntu.id
+  ami                         = data.aws_ami.ubuntu.id
   availability_zone           = var.zones[count.index]
   subnet_id                   = aws_subnet.private_subnet[count.index].id
   vpc_security_group_ids      = [aws_security_group.private_security_group.id]
