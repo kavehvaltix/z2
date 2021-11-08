@@ -34,5 +34,6 @@ spoke_vpcs = {
     prefix = "transit_vpc_oregon"
     vpc_cidr = "10.110.0.0/16"
     subnet_bits = 8
+    aws_provider_alias = "aws-workspaces"
   }
 }

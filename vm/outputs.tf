@@ -11,7 +11,7 @@ output "vm" {
 }
 
 
-output "transit_vpc" {
+output "vpc" {
   value = {
     id = aws_vpc.transit_vpc.vpc_id
     name = aws_vpc.transit_vpc.tags.Name

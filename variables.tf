@@ -69,6 +69,7 @@ variable "spoke_vpcs" {
     prefix      = string
     vpc_cidr    = string
     subnet_bits = number
+	aws_provider_alias = string
   }))
 }
 

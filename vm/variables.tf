@@ -28,3 +28,7 @@ variable "instance_type" {
   description = "type of demo instances to deploy"
   default     = "t3a.medium"
 }
+
+variable "aws_provider_alias"{
+  default = "default"
+}

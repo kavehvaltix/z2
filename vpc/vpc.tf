@@ -1,18 +1,19 @@
-# Adding Transit VPC 
-resource "aws_vpc" "transit_vpc" {
+# Creating the VPC 
+resource "aws_vpc" "vpc" {
   cidr_block = var.transit_vpc_cidr
 
   tags = {
-    Name   = "Transit_VPC"
+    Name   = "${var.prefix}_vpc"
     prefix = var.prefix
   }
 }
-#Configuting Internet Gateway for the transit VPC
+#Configuting Internet Gateway for the VPC
 resource "aws_internet_gateway" "transit_vpc_igw" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name   = "Transit_VPC_IGW"
+    Name   = "${var.prefix}_igw"
+    prefix = var.prefix
   }
 }
 
@@ -21,6 +22,7 @@ resource "aws_default_route_table" "transit_vpc_default_rtable" {
   default_route_table_id = aws_vpc.vpc.default_route_table_id
 
   tags = {
-    Name   = "transit_vpc_default_rtable"
+    Name   = "${var.prefix}_default_rtable"
+    prefix = var.prefix
   }
 }
