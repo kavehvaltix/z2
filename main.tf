@@ -20,13 +20,14 @@ provider "valtix" {
 
 provider "aws" {
 	region					= var.valtix_aws_region
+	profile                 = "sedemo-kaveh-lab"
 }
 
 # need this to update workspace VPC route table to go to TGW
 provider "aws" {
   	alias					= "aws-workspaces"
   	region                  = var.valtix_aws_region
-  	profile                 = "customprofile"
+  	profile                 = "aws-workspaces"
 }
 
 module "vpc" {
