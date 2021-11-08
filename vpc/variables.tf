@@ -3,7 +3,7 @@ variable "prefix" {
   default     = "km"
 }
 
-variable "transit_vpc_cidr" {
+variable "vpc_cidr" {
   description = "CIDR block of the VPC"
   default     = "10.110.0.0/16"
 }
@@ -17,16 +17,6 @@ variable "zones" {
   description = "availability zones that will be used"
   type        = list(string)
   default     = ["us-west-2a", "us-west-2b"]
-}
-
-variable "key_name" {
-  description = "SSH Keypair name"
-  default     = "kaveh_71121"
-}
-
-variable "instance_type" {
-  description = "type of demo instances to deploy"
-  default     = "t3a.medium"
 }
 
 variable "aws_provider_alias"{

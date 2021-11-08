@@ -1,20 +1,8 @@
-output "vm" {
-  value = [
-    for instance in aws_instance.vm_priv :
-    {
-      public_ip  = instance.public_ip
-      private_ip = instance.private_ip
-      az         = instance.availability_zone
-      ssh_cmd    = "ssh ubuntu@${instance.public_ip}"
-    }
-  ]
-}
-
-
+#VPC output
 output "vpc" {
   value = {
-    id = aws_vpc.transit_vpc.vpc_id
-    name = aws_vpc.transit_vpc.tags.Name
+    id = aws_vpc.vpc.vpc_id
+    name = aws_vpc.vpc.tags.Name
   }
 }
 
