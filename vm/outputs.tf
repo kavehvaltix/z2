@@ -10,14 +10,6 @@ output "vm" {
   ]
 }
 
-
-output "vpc" {
-  value = {
-    id = aws_vpc.transit_vpc.vpc_id
-    name = aws_vpc.transit_vpc.tags.Name
-  }
-}
-
 output "route_table_ids" {
   value = aws_route_table.private_route_table.*.id
 }

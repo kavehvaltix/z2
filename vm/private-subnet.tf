@@ -1,6 +1,6 @@
 resource "aws_subnet" "private_subnet" {
   count             = length(var.zones)
-  vpc_id            = aws_vpc.vpc.id
+  vpc_id            = var.vpc_id
   cidr_block        = cidrsubnet(var.vpc_cidr, var.subnet_bits, (count.index * 3))
   availability_zone = var.zones[count.index]
 
@@ -12,7 +12,7 @@ resource "aws_subnet" "private_subnet" {
 
 resource "aws_route_table" "private_route_table" {
   count  = length(var.zones)
-  vpc_id = aws_vpc.vpc.id
+  vpc_id = var.vpc_id
 
   route {
     cidr_block = "${data.http.myip.body}/32"

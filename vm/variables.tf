@@ -32,3 +32,7 @@ variable "instance_type" {
 variable "aws_provider_alias"{
   default = "default"
 }
+
+variable "vpc_id"{
+  default =""
+}
