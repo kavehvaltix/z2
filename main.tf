@@ -1,36 +1,5 @@
-# Terraform
-terraform {
-	required_providers {
-		valtix		= {
-			source	= "valtix-security/valtix"
-			version = "2.10.1"
-		}
-		aws = {
-			source  = "hashicorp/aws"
-			version = "~> 3.0"
-		}
-	}
-}
-
-# Providers
-provider "valtix" {
-	acctname		= var.valtix_account_name
-	api_key_file	= file (var.valtix_api_key_file)
-}
-
-provider "aws" {
-	region					= var.valtix_aws_region
-	profile                 = "sedemo-kaveh-lab"
-}
-
-# need this to update workspace VPC route table to go to TGW
-provider "aws" {
-  	alias					= "aws-workspaces"
-  	region                  = var.valtix_aws_region
-  	profile                 = "aws-workspaces"
-}
-
 module "vpc" {
+  for_each	         = var.spoke_vpcs
   source        	 = "./vpc"
   prefix        	 = each.value.prefix
   vpc_cidr      	 = each.value.vpc_cidr
@@ -40,6 +9,7 @@ module "vpc" {
 }
 
 module "vm" {
+  for_each      	 = var.spoke_vpcs
   source        	 = "./vm"
   prefix        	 = each.value.prefix
   vpc_cidr      	 = each.value.vpc_cidr
