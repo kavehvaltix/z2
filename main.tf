@@ -13,7 +13,7 @@ module "vm" {
   source        	 = "./vm"
   prefix        	 = each.value.prefix
   aws_provider_alias = each.value.aws_provider_alias
-  zones            = var.valtix_aws_azs
+  zones            = var.valtix_aws_azs[0]
   key_name         = var.ec2_ssh_key_name
   instance_type    = var.ec2_instance_type
   subnet_id        = module.vpc.subnet_id
