@@ -36,3 +36,8 @@ variable "aws_provider_alias"{
 variable "vpc_id"{
   default =""
 }
+
+variable "subnet_id"{
+  default     =    "subnet-09c1e4a677fe41cd1"
+  type = string
+}

@@ -8,21 +8,10 @@ data "aws_ami" "ubuntu" {
   }
 }
 
-data "aws_ami" "valtix_ubuntu" {
-  most_recent = true
-  owners      = ["902505820678"]
-
-  filter {
-    name   = "name"
-    values = ["valtix-ubuntu*"]
-  }
-}
-
 resource "aws_instance" "vm_priv" {
-  count                       = length(var.zones)
   ami                         = data.aws_ami.ubuntu.id
-  availability_zone           = var.zones[count.index]
-  subnet_id                   = aws_subnet.private_subnet[count.index].id
+  availability_zone           = var.zones
+  subnet_id                   = var.subnet_id
   vpc_security_group_ids      = [aws_security_group.private_security_group.id]
   instance_type               = var.instance_type
   associate_public_ip_address = true
@@ -33,12 +22,12 @@ resource "aws_instance" "vm_priv" {
   }
 
   tags = {
-    Name   = "${var.prefix}_vm-${count.index + 1}"
+    Name   = "${var.prefix}_vm"
     prefix = var.prefix
     role   = "prod"
   }
   volume_tags = {
-    Name   = "${var.prefix}_vm-${count.index + 1}"
+    Name   = "${var.prefix}_vm"
     prefix = var.prefix
   }
 

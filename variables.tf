@@ -73,6 +73,14 @@ variable "spoke_vpcs" {
   }))
 }
 
+variable "spoke_vms" {
+  description = "a list of spoke VM variables"
+  type = map(object({
+    prefix      = string
+	aws_provider_alias = string
+  }))
+}
+
 variable "ec2_instance_type" {
   description = "App EC2 instance type"
   default     = "t3a.medium"
