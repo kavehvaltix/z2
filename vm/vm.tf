@@ -10,7 +10,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "vm_priv" {
   ami                         = data.aws_ami.ubuntu.id
-  availability_zone           = var.zones
+  availability_zone           = var.zone
   subnet_id                   = var.subnet_id
   vpc_security_group_ids      = [aws_security_group.private_security_group.id]
   instance_type               = var.instance_type

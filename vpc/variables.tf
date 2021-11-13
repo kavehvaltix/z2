@@ -13,10 +13,9 @@ variable "subnet_bits" {
   default     = 8
 }
 
-variable "zones" {
-  description = "availability zones that will be used"
-  type        = list(string)
-  default     = ["us-west-2a", "us-west-2b"]
+variable "zone" {
+  description = "availability zone that will be used"
+  default     = "us-west-2a"
 }
 
 variable "aws_provider_alias"{

@@ -40,6 +40,10 @@ spoke_vms = {
   transit_vm = {
     prefix = "transit_vm_oregon"
     aws_provider_alias = "aws-security"
+  },
+  workspaces_vm = {
+    prefix = "workspaces_vm"
+    aws_provider_alias = "aws-workspaces"
   }
 }
 
